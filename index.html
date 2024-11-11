@@ -1,498 +1,312 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bulma css template -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- model viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <title>
+    AnimateAnything
+  </title>
+  <link rel="icon" href="icon.ico">
 
-<head lang="en">
-    <link rel="icon" type="image/png" href="./img/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+   
+        
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
 
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <style>
-        iframe {
-            height: 75vh;
-            width: 100%;
-            /* or any width you prefer */
-            border: none;
-        }
-    </style>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/before_after.css">
+  <!-- <link rel="icon" href="./static/images/cameraicon.svg"> -->
 
-    <title>AnimateAnything</title>
-
-    <meta name="description" content="AnimateAnything">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- <base href="/"> -->
-
-    <!--FACEBOOK-->
-    <meta property="og:image" content="./img/milestone.jpg">
-    <meta property="og:image:type" content="image/jpg">
-    <meta property="og:image:width" content="2040">
-    <meta property="og:image:height" content="638">
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://ailab-cvc.github.io/seed" />
-    <meta property="og:title" content="AnimateAnything" />
-    <meta property="og:description" content="Project page for AnimateAnything." />
-
-    <!--TWITTER-->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AnimateAnything" />
-    <meta name="twitter:description" content="Project page for AnimateAnything." />
-    <meta name="twitter:image" content="./img/milestone.jpg" />
-
-
-    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
-    <link rel="stylesheet" href="css/app.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="./static/css/magnify.css">
+  <script src="./static/js/jquery.magnify.js"></script>
 
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font.css">
-    <link href="style.css" rel="stylesheet" type="text/css">
-
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-
-    <script src="js/app.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-52J0PM8XKV');
-    </script>
-
-    <!-- <link rel="stylesheet" href="css/bulma.min.css"> -->
-    <link rel="stylesheet" href="css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="css/bulma-slider.min.css">
-    <!-- <link rel="stylesheet" href="css/fontawesome.all.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
-
-    <link rel="stylesheet" href="css/index.css">
-
-    <script src="js/jquery.min.js"></script>
-    <script defer src="js/fontawesome.all.min.js"></script>
-    <script src="js/bulma-carousel.min.js"></script>
-    <script src="js/bulma-slider.min.js"></script>
-    <script src="js/index.js"></script>
-
-
-    <style>
-        .nav-pills {
-            position: relative;
-            display: inline;
-        }
-
-        .author {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted black;
-            /* If you want dots under the hoverable text */
-        }
-
-        /* Tooltip text */
-        .author .affiliation {
-            visibility: hidden;
-            width: 120px;
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            padding: 5px 0;
-            border-radius: 6px;
-
-            /* Position the tooltip text - see examples below! */
-            position: absolute;
-            z-index: 1;
-            width: 120px;
-            top: 100%;
-            left: 50%;
-            margin-left: -60px;
-            /* Use half of the width (120/2 = 60), to center the tooltip */
-        }
-
-        /* Show the tooltip text when you mouse over the tooltip container */
-        .author:hover .affiliation {
-            visibility: visible;
-        }
-
-        .video-container {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .video-wrapper {
-            flex: 1;
-            margin-right: 2px;
-            margin-left: 2px;
-            max-width: calc(33.33%px);
-            /* 33.33% for 3 videos per row, subtracting margins */
-            height: auto;
-            text-align: center;
-        }
-
-        .video {
-            max-width: 100%;
-            height: auto;
-            /* height: 230px; */
-        }
-
-        .caption {
-            margin-top: 0px;
-        }
-
-        .image-container {
-            display: flex;
-            flex-direction: row;
-            /* Arrange items horizontally */
-            justify-content: space-between;
-            /* Spread items horizontally */
-            align-items: flex-end;
-            /* Align items at the bottom */
-        }
-
-        .image-container .image-wrapper {
-            flex: 1;
-            /* Distribute equal width to both images */
-            padding: 10px;
-            /* Add some spacing between images */
-        }
-
-        .image-container img {
-            max-width: 100%;
-            /* Constrain image width */
-            height: auto;
-            /* Maintain image aspect ratio */
-            display: block;
-            /* Remove extra space below inline images */
-            margin: 0 auto;
-            /* Center the images within their containers */
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="container" id="main">
-        <div class="row">
-            <h2 class="col-md-14 text-center">
-                <strong>
-                    <font size="+4">
-                        <!-- &#127752;  -->
-                        <!-- <image src="assets/images/logo.jpg" height="65px" alt=""> -->
-                        <span>AnimateAnything</span>: Consistent and Controllable Animation for video generation
-                    </font>
+  <style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 
-            </h2>
-        </div>
-
-
-        <div class="col-md-12 text-center">
-            <span class="author-block">
-                <a href="">guojun lei</a><sup>1,2</sup>,
-            </span>
-
-            <span class="author-block">
-                <a href="">chi wang</a><sup>1,3</sup>,
-            </span>
-
-            <span class="author-block">
-                <a href="">rong zhang</a><sup>1,5&#9993</sup>,
-            </span>
-
-            <span class="author-block">
-                <a href="">yikai wang</a><sup>1,4</sup>,
-            </span>
-
-            <span class="author-block">
-                <a href="">hong li</a><sup>6</sup>,
-            </span>
-
-            <span class="author-block">
-                <a href="">weiwei xu</a><sup>5</sup>
-            </span>
-
-
-            <!-- <div class="content text-center">
-                <span class="author-block"><sup>&#9993</sup>Corresponding authors</span>
-            </div> -->
-
-
-        </div>
-
-        <div class="col-md-4 col-md-offset-4 text-center">
-            <ul class="nav nav-pills nav-justified">
-                <li>
-                    <a target="_blank" href="">
-                        <image src="assets/images/arxiv.png" height="25px" alt="arXiv"> arXiv
-                            <!-- <h4><strong>arXiv</strong></h4> -->
-                    </a>
-                </li>
-
-                <li>
-                    <a target="_blank"
-                        href="">
-                        <image src="assets/images/book_logo.png" height="25px" alt="Paper"> Paper
-                            <!-- <h4><strong>arXiv</strong></h4> -->
-                    </a>
-                </li>
-
-                <li>
-                    <a target="_blank" href="">
-                        <image src="assets/images/github.png" height="25px" alt="Code"> Code
-                            <!-- <h4><strong>Github</strong></h4> -->
-                    </a>
-                </li>
-
-            </br>
-
-                <li>
-                    <a target="_blank" href="">
-                        <image src="assets/images/hf-logo.png" height="25px" alt="Code"></image>AnimateAnything
-                        <!-- <h4><strong>Github</strong></h4> -->
-                    </a>
-                </li>
+  .icon-list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        justify-content: space-around; /* 控制每个图标+文字组的间距 */
+    }
+    .icon-list li {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* 控制图标和文字之间的间距 */
+    }
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
 
 
 
-            </ul>
-        </div>
+  </style>
 
+  <section class="section">
+  <div class="container has-text-centered">
 
-        <div class="col-md-8 col-md-offset-2">
-            <div class="content text-align">
-                </br>
-                <ul>
-                    <li>
-                        <font size="+1">
-                            We propose <b>AnimateAnything</b>, a unified vision controller for video generation.
-                            
-                        </font>
-                    </li>
-                    <li>
-                        <font size="+1">
-                            We introduce a two-stage pipeline to achieve stable and flexible video generation with any control signals. In the first stage, all controls signals will be unified into frame by frame optical flows, which is then fed into the second stage to synchronize with text controls for high-quality video generation.
-                        </font>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <p class="title is-3"> 🧙‍♂️ AnimateAnything: Consistent and Controllable Animation for video generation
+    </p>
+
+    <div class="col-md-12 text-center">
+      <span class="author-block">
+          <a href="">guojun lei</a><sup>1</sup>,
+      </span>
+
+      <span class="author-block">
+          <a href="">chi wang</a><sup>1</sup>,
+      </span>
+
+      <span class="author-block">
+          <a href="">rong zhang</a><sup>1</sup>,
+      </span>
+
+      <span class="author-block">
+          <a href="">yikai wang</a><sup>1</sup>,
+      </span>
+
+      <span class="author-block">
+          <a href="">hong li</a><sup>1</sup>,
+      </span>
+
+      <span class="author-block">
+          <a href="">weiwei xu</a><sup>1*</sup>
+      </span>
+  </div>
 
 
 
 
-        </div>
+  <div class="is-flex is-justify-content-center">
+    <ul class="icon-list">
+        <li>
+            <a target="_blank" href="">
+                <img src="assets/images/arxiv.png" width="25px" alt="arXiv" class="icon"> arXiv
+                    <!-- <h4><strong>arXiv</strong></h4> -->
+            </a>
+        </li>
+        <li>
+            <a target="_blank"
+                href="">
+                <img src="assets/images/book_logo.png" width="25px" alt="Paper" class="icon"> Paper
+                    <!-- <h4><strong>arXiv</strong></h4> -->
+            </a>
+        </li>
 
-            <div class="is-flex is-justify-content-center">
-
-            </div>
-            <br>
-            <img class="summary-img" src="imgs/teaser_2_cropped_00.png" style="width:100%;">
-
-        </div>
-
-
-        </div>
-
-            <div class="is-flex is-justify-content-center">
-
-            </div>
-            <br>
-            <h3 class="content text-center">
-                <b>Overview</b>
-            </h3>
-            <img class="summary-img" src="imgs/pipeline_cropped_00.png" style="width:100%;">
-            <p class="content is-size-6">The overview of AnimateAnything. Our framework is mainly constituted with two parts. FlowAnything and ControlAnything</p>
-            
-        </div>
+        <li>
+            <a target="_blank" href="">
+                <img src="assets/images/github.png" width="25px" alt="Code" class="icon"> Code
+                    <!-- <h4><strong>Github</strong></h4> -->
+            </a>
+        </li>
 
 
+        <li>
+            <a target="_blank" href="">
+                <img src="assets/images/hf-logo.png" width="25px" alt="Code" class="icon">AnimateAnything
+                <!-- <h4><strong>Github</strong></h4> -->
+            </a>
+        </li>
+
+    </ul>
+</div>
 
 
-        <!-- <div class="col-md-8 col-md-offset-2">
-            <h3 class="content text-center">
-                <b>Overview</b>
-            </h3>
-            <img class="summary-img" src="imgs/pipeline_cropped_00.png" style="width:100%;">
-            <p class="content is-size-6">The overview of AnimateAnything. Our framework is mainly constituted with two parts. FlowAnything and ControlAnything</p>
-            
-        </div> -->
 
 
-        <h3 class="content text-center">
-            <b>Visualization Results</b>
-        </h3>
+    <div class="is-flex is-justify-content-center">
 
-        <!-- <p class="title is-3 mt-5 has-text-centered"> <b>Camera Pose Control</b></p> -->
-        <h3 class="title is-4">Camera Pose Control</h3>
-        <!-- <div class="content has-text-justified">
-        <h3 class="title is-4">large Camera Pose Control</h3>
-        </div> -->
-        <table class="table" style="height:100%;width:100%;">
-            <colgroup>
-              <col span="1" style="width: 33%;">
-              <col span="1" style="width: 33%;">
-              <col span="1" style="width: 33%;">
-            </colgroup>
-            <tbody>
+    </div>
+    <br>
+    <img class="summary-img" src="imgs/teaser_2_cropped_00.png" style="width:100%;">
+
+  </div>
+
+  <!-- main container -->
+  <div class="container">
+
+    <!-- abstract -->
+    <p class="title is-3 mt-5 has-text-centered"> Abstract </p>
+    <p class="content is-size-6 has-text-left">
+      We present a unified controllable video generation approach AnimateAnything that facilitates precise and consistent video manipulation across various conditions, including camera trajectories, text prompts, and user motion annotations. Specifically, we carefully design a multi-scale control feature fusion network to construct a common motion representation for different conditions. It explicitly converts all control information into frame-by-frame optical flows. Then we introduce the optical flows as motion priors to guide the video generation. In addition, to reduce the flickering issues caused by large-scale motion, we propose a frequency-based stabilization module. It can enhance temporal coherence by ensuring the video's frequency domain consistency. Experiments demonstrate that our method outperforms the state-of-the-art approaches. 
+    </p>
+
+
+    <p class="title is-3 mt-5 has-text-centered">Overview</p>
+
+    <img class="summary-img" src="imgs/pipeline_cropped_00.png" style="width:100%;">
+    <p class="content is-size-6">The overview of AnimateAnything. Our framework is mainly constituted with two parts. FlowAnything and ControlAnything</p>
     
-              <tr> 
-                <th> <video muted controls autoplay loop> <source src="dynamic_scene/0_animals24.9.21_bear7.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="dynamic_scene/0_animals24.9.21_panda2.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="dynamic_scene/1_animals_2_9.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
-              </tr>
-              <tr> 
-                <th> <video muted controls autoplay loop> <source src="dynamic_scene/3_animals_ram5.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="dynamic_scene/4_animals_horse8.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="dynamic_scene/38_openvidcheckpoint-2400_cmp_A_pink_goldfish_swims_freely_i.mp4" type="video/mp4"> </video> </th>
-              </tr>
-              <tr> 
-                <th> <video muted controls autoplay loop> <source src="static_scene/0_scenery_xiangge1.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="static_scene/1_building_17.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="static_scene/4_scenery_xiangge9.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
-              </tr>
+
+    <p class="title is-3 mt-5 has-text-centered"> Visualization Results</p>
+
+      <div class="content has-text-justified">
+      <h3 class="title is-4">large Camera Pose Control</h3>
+      </div>
+
+      <table class="table" style="height:100%;width:100%;">
+        <colgroup>
+          <col span="1" style="width: 33%;">
+          <col span="1" style="width: 33%;">
+          <col span="1" style="width: 33%;">
+        </colgroup>
+        <tbody>
+
+          <tr> 
+            <th> <video muted controls autoplay loop> <source src="dynamic_scene/0_animals24.9.21_bear7.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="dynamic_scene/0_animals24.9.21_panda2.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="dynamic_scene/1_animals_2_9.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
+          </tr>
+          <tr> 
+            <th> <video muted controls autoplay loop> <source src="dynamic_scene/3_animals_ram5.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="dynamic_scene/4_animals_horse8.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="dynamic_scene/38_openvidcheckpoint-2400_cmp_A_pink_goldfish_swims_freely_i.mp4" type="video/mp4"> </video> </th>
+          </tr>
+          <tr> 
+            <th> <video muted controls autoplay loop> <source src="static_scene/0_scenery_xiangge1.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="static_scene/1_building_17.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="static_scene/4_scenery_xiangge9.jpg_openvidcheckpoint-2400_final_video.mp4" type="video/mp4"> </video> </th>
+          </tr>
+      </table>
+
+
+
+      <div class="content has-text-justified">
+        <h3 class="title is-4">Drag Anything you like</h3>
+        </div>
+
+        <table class="table" style="height:100%;width:100%;">
+          <colgroup>
+            <col span="1" style="width: 33%;">
+            <col span="1" style="width: 33%;">
+            <col span="1" style="width: 33%;">
+          </colgroup>
+
+
+            <tr> 
+              <th> <video muted controls autoplay loop> <source src="plants_growth/A_green_potted_plant_is_gradually_growing_up_fine2.mp4" type="video/mp4"> </video> </th>
+              <th> <video muted controls autoplay loop> <source src="plants_growth/A_pink_flower_is_gradually_shrinking_into_the_shape_of_a_bud_2.mp4" type="video/mp4"> </video> </th>
+              <th> <video muted controls autoplay loop> <source src="plants_growth/A_purple_flower_bud_is_striving_to_bloom.mp4" type="video/mp4"> </video> </th>
+            </tr>
+            <tr> 
+              <th> <video muted controls autoplay loop> <source src="plants_growth/Two_large_lion.mp4" type="video/mp4"> </video> </th>
+              <th> <video muted controls autoplay loop> <source src="plants_growth/A_little_lion_is_walking_slowly.mp4" type="video/mp4"> </video> </th>
+              <th> <video muted controls autoplay loop> <source src="plants_growth/A_butterfly_picked_nectar_and_flew_away.mp4" type="video/mp4"> </video> </th>
+            </tr>
         </table>
 
 
-<!-- ----------------------------------------------------------------------------------------------- -->
 
-
-
-<div class="content has-text-justified">
-    <h3 class="title is-4">Drag Anything you like</h3>
-    </div>
-
-    <table class="table" style="height:100%;width:100%;">
-      <colgroup>
-        <col span="1" style="width: 33%;">
-        <col span="1" style="width: 33%;">
-        <col span="1" style="width: 33%;">
-      </colgroup>
-      <tbody>
-
-        <tr> 
-          <th> <video muted controls autoplay loop> <source src="plants_growth/A_green_potted_plant_is_gradually_growing_up_fine2.mp4" type="video/mp4"> </video> </th>
-          <th> <video muted controls autoplay loop> <source src="plants_growth/A_pink_flower_is_gradually_shrinking_into_the_shape_of_a_bud_2.mp4" type="video/mp4"> </video> </th>
-          <th> <video muted controls autoplay loop> <source src="plants_growth/A_purple_flower_bud_is_striving_to_bloom.mp4" type="video/mp4"> </video> </th>
-        </tr>
-        <tr> 
-          <th> <video muted controls autoplay loop> <source src="plants_growth/Two_large_lion.mp4" type="video/mp4"> </video> </th>
-          <th> <video muted controls autoplay loop> <source src="plants_growth/A_little_lion_is_walking_slowly.mp4" type="video/mp4"> </video> </th>
-          <th> <video muted controls autoplay loop> <source src="plants_growth/A_butterfly_picked_nectar_and_flew_away.mp4" type="video/mp4"> </video> </th>
-        </tr>
-    </table>
-
-
-
-    <div class="content has-text-justified">
-    <h3 class="title is-4">Human Face Animation</h3>
-    </div>
- 
-
-    <table class="table" style="height:100%;width:100%;">
-      <colgroup>
-        <col span="1" style="width: 100%;">
-      </colgroup>
-      <tbody>
-
-        <tr> 
-          <th> <video muted controls autoplay loop> <source src="human_face/1_WRA_SteveDaines0_000.mp4" type="video/mp4"> </video> </th>
-
-        </tr>
-        <tr> 
-          <th> <video muted controls autoplay loop> <source src="human_face/WDA_JeanneShaheen0_000_9_WDA_BarbaraLee1_000.mp4" type="video/mp4"> </video> </th>
-
-        </tr>
-        <tr> 
-          <th> <video muted controls autoplay loop> <source src="human_face/WDA_DonaldMcEachin_000_14_WDA_BobCasey0_000.mp4" type="video/mp4"> </video> </th>
-
-        </tr>
-
-    </table>
-
-
-
-
-
-
-
-
-
-
-
-<!-- ------------------------------------------------------------------------------------------------------------ -->
-
-        <div class="col-md-8 col-md-offset-2">
-            <h4>
-                <b>Comparisons with CameraCtrl and MotionCtrl<a href=""></a></b>
-            </h4>
-
+        <div class="content has-text-justified">
+        <h3 class="title is-4">Human Face Animation</h3>
         </div>
-
-
         <table class="table" style="height:100%;width:100%;">
+          <colgroup>
+            <col span="1" style="width: 100%;">
+          </colgroup>
+          <tbody>
+
+            <tr> 
+              <th> <video muted controls autoplay loop> <source src="human_face/1_WRA_SteveDaines0_000.mp4" type="video/mp4"> </video> </th>
+
+            </tr>
+            <tr> 
+              <th> <video muted controls autoplay loop> <source src="human_face/WDA_JeanneShaheen0_000_9_WDA_BarbaraLee1_000.mp4" type="video/mp4"> </video> </th>
+
+            </tr>
+            <tr> 
+              <th> <video muted controls autoplay loop> <source src="human_face/WDA_DonaldMcEachin_000_14_WDA_BobCasey0_000.mp4" type="video/mp4"> </video> </th>
+
+            </tr>
+        </table>
+
+  
+
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Comparisons with CameraCtrl and MotionCtrl</h3>
+          </div>
+  
+          <table class="table" style="height:100%;width:100%;">
             <colgroup>
               <col span="1" style="width: 25%;">
               <col span="1" style="width: 25%;">
               <col span="1" style="width: 25%;">
               <col span="1" style="width: 25%;">
             </colgroup>
-            <tbody>
+  
             <tr>
-                <th>
-                    <!-- <p style="font-size: large;">Camera Motion</p> -->
-                    Camera Motion
-                </th>
-                <th>CameraCtrl</th>
-                <th>MotionCtrl <a href="#videocomposer"></a></th>
-                <th>Ours</th>
-            </tr>    
-              <tr> 
-                <th>
-                    <a href="">
-                        <image src="img_quality_compare/fish_camera1.png">
-                        <!-- <image width="200" src="img_quality_compare/fish_camera1.png"> -->
-                    </a>
-                </th>
-                <th> <video muted controls autoplay loop> <source src="pose_compare/fish_cameractrl.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="pose_compare/fish_motionctrl.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="pose_compare/fish_ours.mp4" type="video/mp4"> </video> </th>
-              </tr>
-              <tr> 
-                <th>
-                    <a href="">
-                        <image src="img_quality_compare/horse_camera2.png">
-                    </a>
-                </th>
-                <th> <video muted controls autoplay loop> <source src="pose_compare/horse_cameractrl.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="pose_compare/horse_motionctrl.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="pose_compare/horse_ours.mp4" type="video/mp4"> </video> </th>
-              </tr>
-        </table>
+              <th style="text-align: center; vertical-align: middle;">
+                  Camera Motion
+              </th>
+              <th style="text-align: center; vertical-align: middle;">CameraCtrl</th>
+              <th style="text-align: center; vertical-align: middle;">MotionCtrl <a href="#videocomposer"></a></th>
+              <th style="text-align: center; vertical-align: middle;">Ours</th>
+          </tr>    
+          <tr> 
+            <th>
+                <a href="">
+                    <image src="img_quality_compare/fish_camera1.png">
+                    <!-- <image width="200" src="img_quality_compare/fish_camera1.png"> -->
+                </a>
+            </th>
+            <th> <video muted controls autoplay loop> <source src="pose_compare/fish_cameractrl.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="pose_compare/fish_motionctrl.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="pose_compare/fish_ours.mp4" type="video/mp4"> </video> </th>
+          </tr>
+          <tr> 
+            <th>
+                <a href="">
+                    <img src="img_quality_compare/horse_camera2.png">
+                </a>
+            </th>
+            <th> <video muted controls autoplay loop> <source src="pose_compare/horse_cameractrl.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="pose_compare/horse_motionctrl.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="pose_compare/horse_ours.mp4" type="video/mp4"> </video> </th>
+          </tr>
 
+          </table>   
 
+<!-- ------------------------------------------------------------------------------------ -->
 
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Comparisons with Motioni2v,DragAnything and MOFA-Video</h3>
+          </div>
 
-
-
-        <div class="col-md-8 col-md-offset-2">
-            <h4>
-                <b>Comparisons with Motioni2v,DragAnything and MOFA-Video<a href=""></a></b>
-            </h4>
-
-        </div>
-
-
-        <table class="table" style="height:100%;width:100%;">
+          <table class="table" style="height:100%;width:100%;">
             <colgroup>
               <col span="1" style="width: 20%;">
               <col span="1" style="width: 20%;">
@@ -500,55 +314,50 @@
               <col span="1" style="width: 20%;">
               <col span="1" style="width: 20%;">
             </colgroup>
-            <tbody>
+
             <tr>
-                <th>
-                    Camera Motion
-                    <!-- <p style="font-size: large;">Camera Motion</p> -->
+              <th style="text-align: center; vertical-align: middle;">
+                Drag Pattern
+              </th>
+              <th style="text-align: center; vertical-align: middle;">Motion-I2V</th>
+              <th style="text-align: center; vertical-align: middle;">DragAnything</th>
+              <th style="text-align: center; vertical-align: middle;">MOFA-Video</th>
+              <th style="text-align: center; vertical-align: middle;">Ours</th>
+          </tr>    
+          <tr> 
+            <th>
+                <a href="">
+                    <img src="img_quality_compare/horse_pose.png">
+                </a>
+            </th>
+            <th> <video muted controls autoplay loop> <source src="drag_compare/horse_motioni2v.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="drag_compare/horse_dragany.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="drag_compare/horse_mofa.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="drag_compare/horse_ours.mp4" type="video/mp4"> </video> </th>
+          </tr>
+          <tr> 
+            <th>
+                <a href="">
+                    <img src="img_quality_compare/yak_pose.png">
+                </a>
+            </th>
+            <th> <video muted controls autoplay loop> <source src="drag_compare/yak_motioni2v.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="drag_compare/yak_dragany.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="drag_compare/yak_mofa.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="drag_compare/yak_ours.mp4" type="video/mp4"> </video> </th>
+          </tr>
 
-                </th>
-                <th>Motion-I2V</th>
-                <th>DragAnything <a href="#videocomposer"></a></th>
-                <th>MOFA-Video <a href="#videocomposer"></a></th>
-                <th>Ours</th>
-            </tr>    
-              <tr> 
-                <th>
-                    <a href="">
-                        <image src="img_quality_compare/horse_pose.png">
-                    </a>
-                </th>
-                <th> <video muted controls autoplay loop> <source src="drag_compare/horse_motioni2v.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="drag_compare/horse_dragany.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="drag_compare/horse_mofa.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="drag_compare/horse_ours.mp4" type="video/mp4"> </video> </th>
-              </tr>
-              <tr> 
-                <th>
-                    <a href="">
-                        <image src="img_quality_compare/yak_pose.png">
-                    </a>
-                </th>
-                <th> <video muted controls autoplay loop> <source src="drag_compare/yak_motioni2v.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="drag_compare/yak_dragany.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="drag_compare/yak_mofa.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="drag_compare/yak_ours.mp4" type="video/mp4"> </video> </th>
-              </tr>
-        </table>
-
+          </table>   
 
 
 
+<!-- ------------------------------------------------------------------------------------ -->
 
-        <div class="col-md-8 col-md-offset-2">
-            <h4>
-                <b>Human Face animation Comparisons<a href=""></a></b>
-            </h4>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Human Face animation Comparisons</h3>
+          </div>
 
-        </div>
-
-
-        <table class="table" style="height:100%;width:100%;">
+          <table class="table" style="height:100%;width:100%;">
             <colgroup>
               <col span="1" style="width: 20%;">
               <col span="1" style="width: 20%;">
@@ -556,90 +365,82 @@
               <col span="1" style="width: 20%;">
               <col span="1" style="width: 20%;">
             </colgroup>
-            <tbody>
+
             <tr>
-                <th>
-                    Reference Video
-                    <!-- <p style="font-size: large;">Reference Video</p> -->
+              <th style="text-align: center; vertical-align: middle;">
+                Reference Video
+              </th>
+              <th style="text-align: center; vertical-align: middle;">Optical Flow</th>
+              <th style="text-align: center; vertical-align: middle;">Motion-I2V</th>
+              <th style="text-align: center; vertical-align: middle;">MOFA-Video</th>
+              <th style="text-align: center; vertical-align: middle;">Ours</th>
+          </tr>    
+          <tr> 
 
-                </th>
-                <th>Optical Flow</th>
-                <th>Motion-I2V <a href="#videocomposer"></a></th>
-                <th>MOFA-Video <a href="#videocomposer"></a></th>
-                <th>Ours</th>
-            </tr>    
-              <tr> 
+            <th> <video muted controls autoplay loop> <source src="human_compare/man_1_ref.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="human_compare/man_1_flow.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="human_compare/man_1_motioni2v.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="human_compare/man_1_mofa.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="human_compare/man_1_ours.mp4" type="video/mp4"> </video> </th>
+          </tr>
+          <tr> 
+            <tr> 
 
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_1_ref.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_1_flow.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_1_motioni2v.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_1_mofa.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_1_ours.mp4" type="video/mp4"> </video> </th>
-              </tr>
-              <tr> 
+              <th> <video muted controls autoplay loop> <source src="human_compare/man_2_ref.mp4" type="video/mp4"> </video> </th>
+              <th> <video muted controls autoplay loop> <source src="human_compare/man_2_flow.mp4" type="video/mp4"> </video> </th>
+              <th> <video muted controls autoplay loop> <source src="human_compare/man_2_motioni2v.mp4" type="video/mp4"> </video> </th>
+              <th> <video muted controls autoplay loop> <source src="human_compare/man_2_mofa.mp4" type="video/mp4"> </video> </th>
+              <th> <video muted controls autoplay loop> <source src="human_compare/man_2_ours.mp4" type="video/mp4"> </video> </th>
+            </tr>
 
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_2_ref.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_2_flow.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_2_motioni2v.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_2_mofa.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="human_compare/man_2_ours.mp4" type="video/mp4"> </video> </th>
-              </tr>
-        </table>
-
-
+          </table>   
 
 
 
+          
 
+<!-- ------------------------------------------------------------------------------------ -->
 
-<!-- --------------------------------------------------------- -->
-
-        <div class="col-md-8 col-md-offset-2">
-            <h4>
-                <b>Image to Video Generation Comparison<a href=""></a></b>
-            </h4>
-
+      <div class="content has-text-justified">
+        <h3 class="title is-4">Image to Video Generation Comparison</h3>
         </div>
 
-
         <table class="table" style="height:100%;width:100%;">
-            <colgroup>
-              <col span="1" style="width: 20%;">
-              <col span="1" style="width: 20%;">
-              <col span="1" style="width: 20%;">
-              <col span="1" style="width: 20%;">
-              <col span="1" style="width: 20%;">
-            </colgroup>
-            <tbody>
-            <tr>
-                <!-- <th>Ref Image</th> -->
-                <th>Open-Sora</th>
-                <th>Pyramid-Flow</th>
-                <th>CogVideoX<a href="#videocomposer"></a></th>
-                <th>DynamiCrafter<a href="#videocomposer"></a></th>
-                <th>Ours</th>
-            </tr>    
-              <tr> 
+          <colgroup>
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+          </colgroup>
 
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_opensora.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_pyramid.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_cogvideo.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_dynamic.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_our.mp4" type="video/mp4"> </video> </th>
-              </tr>
-              <tr> 
+          <tr>
+            <th style="text-align: center; vertical-align: middle;">
+              Open-Sora
+            </th>
+            <th style="text-align: center; vertical-align: middle;">Pyramid-Flow</th>
+            <th style="text-align: center; vertical-align: middle;">CogVideoX</th>
+            <th style="text-align: center; vertical-align: middle;">DynamiCrafter</th>
+            <th style="text-align: center; vertical-align: middle;">Ours</th>
+        </tr>    
+        <tr> 
 
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2__opensora.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2__pyramid.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2_cogvideo.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2_dynamic.mp4" type="video/mp4"> </video> </th>
-                <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2_ours.mp4" type="video/mp4"> </video> </th>
-              </tr>
-        </table>
+          <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_opensora.mp4" type="video/mp4"> </video> </th>
+          <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_pyramid.mp4" type="video/mp4"> </video> </th>
+          <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_cogvideo.mp4" type="video/mp4"> </video> </th>
+          <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_dynamic.mp4" type="video/mp4"> </video> </th>
+          <th> <video muted controls autoplay loop> <source src="img_quality_compare/man1_our.mp4" type="video/mp4"> </video> </th>
+        </tr>
+          <tr> 
 
+            <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2__opensora.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2__pyramid.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2_cogvideo.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2_dynamic.mp4" type="video/mp4"> </video> </th>
+            <th> <video muted controls autoplay loop> <source src="img_quality_compare/man2_ours.mp4" type="video/mp4"> </video> </th>
+          </tr>
 
-
-
+        </table>            
 
 
 
@@ -653,8 +454,35 @@
 
 
 
+
+  </section>
 
 
 </body>
 
+
+<script>
+  var videos = document.getElementsByClassName("clickplay");
+  for (var i = 0; i < videos.length; i++) {
+    videos[i].addEventListener("click", function() {
+      this.play();
+    });
+    videos[i].addEventListener("ended", function() {
+      this.pause();
+      this.currentTime = 0;
+    });
+  }
+  
+  document.querySelectorAll('.info-container').forEach(function(container) {
+    container.addEventListener('mouseover', function() {
+      var infoText = container.querySelector('.info-text');
+      infoText.style.display = 'block';
+    });
+  
+    container.addEventListener('mouseout', function() {
+      var infoText = container.querySelector('.info-text');
+      infoText.style.display = 'none';
+    });
+  });
+</script>
 </html>
